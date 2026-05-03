@@ -20,10 +20,10 @@ def spam_fk():
     
     count = 0
     while running:
-        # Windows: Ctrl+V to paste
+     
         pyautogui.hotkey('ctrl', 'v')
         time.sleep(0.1)
-        # Press Enter
+     
         pyautogui.press('enter')
         count += 1
         print(f"💥 Sent massive text block #{count}")
