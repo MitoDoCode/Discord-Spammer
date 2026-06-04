@@ -12,10 +12,10 @@ running = False
 
 def spam_fk():
     global running
-    print("📋 Copying  text to clipboard...")
+    print(" Copy  text to clipboard")
     subprocess.run(["wl-copy"], input=WORDS, text=True)
-    print("✅ Text ready")
-    print("Starting in 3 seconds... Click into Vesktop!")
+    print(" Text ready")
+    print("Starting in 3 seconds > Click the chat ")
     time.sleep(3)
     
     count = 0
@@ -24,7 +24,7 @@ def spam_fk():
         time.sleep(0.1)
         subprocess.run(["xdotool", "key", "Return"])
         count += 1
-        print(f"💥 Sent massive FK block #{count}")
+        print(f" Msg Sent #{count}")
 
         #adjust this if the bot check got you
         time.sleep(2)
@@ -35,19 +35,19 @@ def on_press(key):
         if key == keyboard.Key.f9:
             if not running:
                 running = True
-                print("\n🚀 STARTED!")
+                print("\n STARTED!")
                 spam_fk()
         elif key == keyboard.Key.f10:
             running = False
-            print("\n🛑 STOPPED")
+            print("\n STOPPED")
         elif key == keyboard.Key.f11:
-            print("\n👋 EXITING")
+            print("\n EXITING")
             sys.exit(0)
     except:
         pass
 
 print("=" * 50)
-print("💀DISCORD WORD SPAMMER💀")
+print("DISCORD WORD SPAMMER")
 print("=" * 50)
 print("F9 - START")
 print("F10 - STOP")
