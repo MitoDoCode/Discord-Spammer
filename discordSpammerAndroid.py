@@ -53,14 +53,14 @@ def send_enter():
 
 def spam_fk():
     global running
-    print("\n📋 Copying  text to clipboard...")
+    print("\n Copying  text to clipboard...")
     if set_clipboard():
-        print("✅ Text ready")
+        print(" Text ready")
     else:
-        print("❌ Failed to set clipboard")
+        print(" Failed to set clipboard")
         return
     
-    print("Starting in 3 seconds... Tap into Discord")
+    print("Starting in 3 seconds > Tap into Discord")
     time.sleep(3)
     
     count = 0
@@ -69,10 +69,10 @@ def spam_fk():
         time.sleep(0.1)
         send_enter()
         count += 1
-        print(f"💥 Sent massive FK block #{count}")
+        print(f" MSG Sent  #{count}")
         time.sleep(2)
     
-    print("\n🛑 Spamming stopped")
+    print("\n Spamming stopped")
 
 def check_requirements():
     """Check if required Termux packages are installed"""
@@ -81,18 +81,18 @@ def check_requirements():
     # Check for termux-clipboard-set
     result = subprocess.run(['which', 'termux-clipboard-set'], capture_output=True, check=False)
     if result.returncode != 0:
-        print("❌ termux-clipboard-set not found!")
+        print(" termux-clipboard-set not found!")
         print("Install with: pkg install termux-api")
         return False
     
     # Check for input command
     result = subprocess.run(['which', 'input'], capture_output=True, check=False)
     if result.returncode != 0:
-        print("❌ 'input' command not found!")
+        print(" 'input' command not found!")
         print("This requires root or Termux running with proper permissions")
         return False
     
-    print("✅ Requirements met!")
+    print(" Requirements met!")
     return True
 
 def get_key():
@@ -107,12 +107,12 @@ def main():
     global running
     
     print("=" * 50)
-    print("💀DISCORD WORD SPAMMER (Android/Termux)💀")
+    print("DISCORD WORD SPAMMER (Android)")
     print("=" * 50)
     
     # Check requirements first
     if not check_requirements():
-        print("\n⚠️  Missing requirements. Please install:")
+        print("\n  Missing requirements. Please install:")
         print("  pkg install termux-api")
         print("\nNote: 'input' command requires root or Termux with proper permissions.")
         print("If 'input' is not available, use the alternative method below.\n")
@@ -135,23 +135,23 @@ def main():
             if key == 's':
                 if not running:
                     running = True
-                    print("\n🚀 STARTED!")
+                    print("\n STARTED!")
                     spam_fk()
                 else:
-                    print("\n⚠️  Already running! Press 't' to stop first.")
+                    print("\n  Already running! Press 't' to stop first.")
             
             elif key == 't':
                 if running:
                     running = False
-                    print("\n🛑 STOPPED")
+                    print("\n STOPPED")
                 else:
-                    print("\n⚠️  Not running. Press 's' to start.")
+                    print("\n Not running. Press 's' to start.")
             
             elif key == 'q':
                 if running:
                     running = False
                     time.sleep(0.5)
-                print("\n👋 EXITING")
+                print("\n EXITING")
                 sys.exit(0)
             
             elif key == 'h':
@@ -160,7 +160,7 @@ def main():
             # Ignore other keys
                 
     except KeyboardInterrupt:
-        print("\n\n👋 Interrupted. Exiting...")
+        print("\n\n Interrupted. Exiting...")
         sys.exit(0)
 
 if __name__ == "__main__":
